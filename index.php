@@ -44,6 +44,7 @@
 
 		<script src="build/three.js"></script>
 		<script src="js/loaders/STLLoader.js"></script>
+		 <script src="js/OrbitControls.js"></script>
 
 		<script src="js/Detector.js"></script>
 		<script src="js/libs/stats.min.js"></script>
@@ -327,7 +328,12 @@
 
 				//
 
-				window.addEventListener( 'resize', onWindowResize, false );
+				window.addEventListener('resize', onWindowResize, false);
+				controls = new THREE.OrbitControls(camera, renderer.domElement);
+	            controls.enableDamping = true;
+	            controls.dampingFactor = 0.25;
+	            controls.enableZoom = true;
+
 
 			}
 
@@ -375,17 +381,17 @@
 
 			function render() {
 
-				var timer = Date.now() * 0.0005;
+				// var timer = Date.now() * 0.0005;
 
-				//camera.position.x = -Math.cos( timer ) * 2;
-				//camera.position.z = Math.sin( timer ) * 2;
-				camera.position.x = 1.5;
-				camera.position.z = 2.5;				
-				camera.position.y = 1;
-				//camera.rotation.set( 0, 0, 0 );
+				// camera.position.x = -Math.cos( timer ) * 2;
+				// camera.position.z = Math.sin( timer ) * 2;
+				// //camera.position.x = 1.5;
+				// //camera.position.z = 2.5;				
+				// camera.position.y = 1;
+				// //camera.rotation.set( 0, 0, 0 );
 
-				//camera.position.x = 1.5;
-				//camera.position.z = 3;
+				// //camera.position.x = 1.5;
+				// //camera.position.z = 3;
 
 				camera.lookAt( cameraTarget );
 
