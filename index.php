@@ -186,27 +186,27 @@
 				} );
 				*/
 
-				loader.load( 'models/stl/binary/circle.stl', function ( geometry ) {
+				loader.load( 'models/stl/binary/L1_circle.stl', function ( geometry ) {
 
 
 					var meshMaterial = material;
 
-					var request = new XMLHttpRequest();
-				    request.open("GET", "results.json", false);
-				    request.send(null)
-				    var msgjson = JSON.parse(request.responseText);
+					// var request = new XMLHttpRequest();
+				 //    request.open("GET", "results.json", false);
+				 //    request.send(null)
+				 //    var msgjson = JSON.parse(request.responseText);
 
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
-					if (msgjson.params['enabled'] == true) {
+					// if (msgjson.params['enabled'] == true) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
-					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
-					}
+					// }else{
+					// meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					// }
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
 
-					mesh.position.set( -1.1, - 0.6, 1.2 );
+					mesh.position.set( -0.6,-0.551,0.5 );
 					mesh.rotation.set( -Math.PI / 2, 0, 0 );
 					mesh.scale.set( 0.02, 0.02, 0.02 );
 
@@ -217,7 +217,7 @@
 
 				} );
 
-				loader.load( 'models/stl/binary/pillars.stl', function ( geometry ) {
+				loader.load( 'models/stl/binary/L1_pillars.stl', function ( geometry ) {
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
@@ -226,7 +226,7 @@
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
 
-					mesh.position.set( -1.1, - 0.6, 1.2 );
+					mesh.position.set( -0.6,-0.551,0.5 );
 					mesh.rotation.set( -Math.PI / 2, 0, 0 );
 					mesh.scale.set( 0.02, 0.02, 0.02 );
 
@@ -237,7 +237,7 @@
 
 				} );
 
-				loader.load( 'models/stl/binary/stairs.stl', function ( geometry ) {
+				loader.load( 'models/stl/binary/L1_stairs.stl', function ( geometry ) {
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
@@ -246,7 +246,7 @@
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
 
-					mesh.position.set( -1.1, - 0.6, 1.2 );
+					mesh.position.set( -0.6,-0.551,0.5 );
 					mesh.rotation.set( -Math.PI / 2, 0, 0 );
 					mesh.scale.set( 0.02, 0.02, 0.02 );
 
@@ -257,7 +257,7 @@
 
 				} );
 
-				loader.load( 'models/stl/binary/walls.stl', function ( geometry ) {
+				loader.load( 'models/stl/binary/L1_walls.stl', function ( geometry ) {
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
@@ -266,7 +266,7 @@
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
 
-					mesh.position.set( -1.1, - 0.6, 1.2 );
+					mesh.position.set( -0.6,-0.551,0.5 );
 					mesh.rotation.set( -Math.PI / 2, 0, 0 );
 					mesh.scale.set( 0.02, 0.02, 0.02 );
 
@@ -277,20 +277,33 @@
 
 				} );
 
-				// Colored binary STL
-				/*
-				loader.load( 'models/stl/binary/colored.stl', function ( geometry ) {
+				loader.load( './models/stl/binary/light1.stl', function ( geometry ) {
 
 					var meshMaterial = material;
-					if (geometry.hasColors) {
-						meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors });
+					//if (geometry.hasColors) {
+					// meshMaterial = new THREE.MeshPhongMaterial({emissive: 0xffffff,
+					// emissiveIntensity: 10, color: 0xFFFFFF});
+					//}
+
+					var request = new XMLHttpRequest();
+				    request.open("GET", "results.json", false);
+				    request.send(null)
+				    var msgjson = JSON.parse(request.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson.params['enabled'] == false && msgjson.params['pin'] == 5) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
 					}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
 
-					mesh.position.set( 0.5, 0.2, 0 );
-					mesh.rotation.set( - Math.PI / 2, Math.PI / 2, 0 );
-					mesh.scale.set( 0.3, 0.3, 0.3 );
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
 
 					mesh.castShadow = true;
 					mesh.receiveShadow = true;
@@ -298,8 +311,133 @@
 					scene.add( mesh );
 
 				} );
-				*/
 
+				loader.load( './models/stl/binary/light2.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );
+
+
+				loader.load( './models/stl/binary/light3.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );
+
+				loader.load( './models/stl/binary/light4.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );
+
+				loader.load( './models/stl/binary/light5.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );
+
+				loader.load( './models/stl/binary/light6.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );	
+				
+				loader.load( './models/stl/binary/light7.stl', function ( geometry ) {
+
+					var meshMaterial = material;
+					//if (geometry.hasColors) {
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					//}
+
+					var mesh = new THREE.Mesh( geometry, meshMaterial );
+
+					mesh.position.set( -0.6,-0.551,0.5 );
+					mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					//mesh.rotation.set( -Math.PI / 2, 0, 0 );
+					mesh.scale.set( 0.02, 0.02, 0.02 );
+
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					scene.add( mesh );
+
+				} );							
 
 				// Lights
 
