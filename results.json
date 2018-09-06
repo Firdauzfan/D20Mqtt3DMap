@@ -1,1 +1,1 @@
-{"method":"setLightingStat","params":{"pin":26,"enabled":false}}
+{"method":"setLightingStat","params":{"pin":19,"enabled":true}}
