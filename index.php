@@ -98,7 +98,7 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 15 );
+				camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 15 );
 				camera.position.set( 3, 0.15, 3 );
 
 				cameraTarget = new THREE.Vector3( 0, -0.7, 0 );
