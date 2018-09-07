@@ -53,7 +53,7 @@
 			var previous = null;
 		    var current = null;
 		    setInterval(function() {
-		        $.getJSON("results.json", function(json) {
+		        $.getJSON("results_json/results.json", function(json) {
 		            current = JSON.stringify(json);            
 		            if (previous && current && previous !== current) {
 		                console.log('refresh');
@@ -62,6 +62,84 @@
 		            previous = current;
 		        });                       
 		    }, 1000);   
+
+		    var previous2 = null;
+		    var current2 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results2.json", function(json2) {
+		            current2 = JSON.stringify(json2);            
+		            if (previous2 && current2 && previous2 !== current2) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous2 = current2;
+		        });                       
+		    }, 1000); 
+
+		    var previous3 = null;
+		    var current3 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results3.json", function(json3) {
+		            current3 = JSON.stringify(json3);            
+		            if (previous3 && current3 && previous3 !== current3) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous3 = current3;
+		        });                       
+		    }, 1000); 
+
+		    var previous4 = null;
+		    var current4 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results4.json", function(json4) {
+		            current4 = JSON.stringify(json4);            
+		            if (previous4 && current4 && previous4 !== current4) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous4 = current4;
+		        });                       
+		    }, 1000); 
+
+		    var previous5 = null;
+		    var current5 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results5.json", function(json5) {
+		            current5 = JSON.stringify(json5);            
+		            if (previous5 && current5 && previous5 !== current5) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous5 = current5;
+		        });                       
+		    }, 1000); 
+
+		    var previous6 = null;
+		    var current6 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results6.json", function(json6) {
+		            current6 = JSON.stringify(json6);            
+		            if (previous6 && current6 && previous6 !== current6) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous6 = current6;
+		        });                       
+		    }, 1000); 
+
+		    var previous7 = null;
+		    var current7 = null;
+		    setInterval(function() {
+		        $.getJSON("results_json/results7.json", function(json7) {
+		            current7 = JSON.stringify(json7);            
+		            if (previous7 && current7 && previous7 !== current7) {
+		                console.log('refresh');
+		                location.reload();
+		            }
+		            previous7 = current7;
+		        });                       
+		    }, 1000); 
 		</script>
 		<script>
 
@@ -126,65 +204,10 @@
 
 				var loader = new THREE.STLLoader();
 
-				/*
-				loader.load( 'models/stl/ascii/slotted_disk.stl', function ( geometry ) {
-
-					var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
-					var mesh = new THREE.Mesh( geometry, material );
-
-					mesh.position.set( 0, - 0.25, 0.6 );
-					mesh.rotation.set( 0, - Math.PI / 2, 0 );
-					mesh.scale.set( 0.5, 0.5, 0.5 );
-
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-
-					scene.add( mesh );
-
-				} );
-				*/
-
 				// Binary files
 
 				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
 
-				/*
-				loader.load( 'models/stl/binary/pr2_head_pan.stl', function ( geometry ) {
-
-					var mesh = new THREE.Mesh( geometry, material );
-
-					mesh.position.set( 0, - 0.37, - 0.6 );
-					mesh.rotation.set( - Math.PI / 2, 0, 0 );
-					mesh.scale.set( 2, 2, 2 );
-
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-
-					scene.add( mesh );
-
-				} );
-				
-
-				loader.load( 'models/stl/binary/pr2_head_tilt.stl', function ( geometry ) {
-
-					var meshMaterial = material;
-					//if (geometry.hasColors) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x00A2E9});
-					//}
-
-					var mesh = new THREE.Mesh( geometry, meshMaterial );
-
-					mesh.position.set( 0.136, - 0.37, - 0.6 );
-					mesh.rotation.set( - Math.PI / 2, 0.3, 0 );
-					mesh.scale.set( 2, 2, 2 );
-
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-
-					scene.add( mesh );
-
-				} );
-				*/
 
 				loader.load( 'models/stl/binary/L1_circle.stl', function ( geometry ) {
 
@@ -286,13 +309,13 @@
 					//}
 
 					var request = new XMLHttpRequest();
-				    request.open("GET", "results.json", false);
+				    request.open("GET", "results_json/results.json", false);
 				    request.send(null)
 				    var msgjson = JSON.parse(request.responseText);
 
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
-					if (msgjson.params['enabled'] == false && msgjson.params['pin'] == 5) {
+					if (msgjson.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
 					}else{
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
@@ -316,7 +339,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request2 = new XMLHttpRequest();
+				    request2.open("GET", "results_json/results2.json", false);
+				    request2.send(null)
+				    var msgjson2 = JSON.parse(request2.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson2.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -338,7 +372,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request3 = new XMLHttpRequest();
+				    request3.open("GET", "results_json/results3.json", false);
+				    request3.send(null)
+				    var msgjson3 = JSON.parse(request3.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson3.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -359,7 +404,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request4 = new XMLHttpRequest();
+				    request4.open("GET", "results_json/results4.json", false);
+				    request4.send(null)
+				    var msgjson4= JSON.parse(request4.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson4.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -380,7 +436,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request5 = new XMLHttpRequest();
+				    request5.open("GET", "results_json/results5.json", false);
+				    request5.send(null)
+				    var msgjson5= JSON.parse(request5.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson5.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -401,7 +468,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request6 = new XMLHttpRequest();
+				    request6.open("GET", "results_json/results6.json", false);
+				    request6.send(null)
+				    var msgjson6= JSON.parse(request6.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson6.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -422,7 +500,18 @@
 
 					var meshMaterial = material;
 					//if (geometry.hasColors) {
+					var request7 = new XMLHttpRequest();
+				    request7.open("GET", "results_json/results7.json", false);
+				    request7.send(null)
+				    var msgjson7= JSON.parse(request7.responseText);
+
+					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
+					
+					if (msgjson7.params['enabled'] == false) {
 					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					}else{
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					}
 					//}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );

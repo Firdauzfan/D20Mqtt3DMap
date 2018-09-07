@@ -41,9 +41,39 @@ function procmsg($topic, $msg){
 		$json = json_decode($msgnew);
 		echo $json->method;
 
-	if ($json->method == "setLightingStat"){
-		$fp = fopen('results.json', 'w');
+	if ($json->method == "setLightingStat" && $json->params->pin == "5"){
+		$fp = fopen('results_json/results.json', 'w');
 		fwrite($fp, json_encode($json));
 		fclose($fp);
 		}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "6"){
+		$fp = fopen('results_json/results2.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "7"){
+		$fp = fopen('results_json/results3.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "8"){
+		$fp = fopen('results_json/results4.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "12"){
+		$fp = fopen('results_json/results5.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "14"){
+		$fp = fopen('results_json/results6.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
+	else if ($json->method == "setLightingStat" && $json->params->pin == "26"){
+		$fp = fopen('results_json/results7.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+	}
 }
