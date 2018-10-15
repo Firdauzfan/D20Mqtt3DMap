@@ -316,9 +316,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000, emissive: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0xffffff});
 					}
 
 					var mesh = new THREE.Mesh( geometry, meshMaterial );
@@ -347,9 +347,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson2.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
@@ -380,9 +380,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson3.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
@@ -412,9 +412,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson4.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
@@ -444,9 +444,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson5.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
@@ -476,9 +476,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson6.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
@@ -508,9 +508,9 @@
 					// var msgjson = JSON.parse('{"method":"setLightingStat","params":{"pin":26,"enabled":true}}');
 					
 					if (msgjson7.params['enabled'] == false) {
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x000000});
 					}else{
-					meshMaterial = new THREE.MeshPhongMaterial({ color: 0x333333});
+					meshMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff});
 					}
 					//}
 
